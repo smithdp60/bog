@@ -1,0 +1,11 @@
+<center>
+  <h1>Add a tag</h1>
+  <div class="input-group">
+
+    <%= bootstrap_form_for @tag do |f| %>
+    <%= f.text_field :name, hide_label: true, placeholder: "Enter a tag" %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</center>

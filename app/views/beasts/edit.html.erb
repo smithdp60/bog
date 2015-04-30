@@ -5,6 +5,9 @@
     <%= bootstrap_form_for(@beast) do |f| %>
     <%= f.text_field :name, hide_label: true, placeholder: "Enter a beast" %>
     <%= f.text_field :description, hide_label: true, placeholder: "Description" %>
+
+    <%= f.collection_check_boxes :tag_ids, @tags, :id, :name, hide_label: true %>
+
     <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>
 

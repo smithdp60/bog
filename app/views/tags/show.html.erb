@@ -1,0 +1,9 @@
+<center><h1><%= @tag.name %></h1>
+
+  <div class="beast-list">
+    <% @tag.beasts.each do |f| %>
+    <li><a href="/beasts/<%= f[:id] %>"><%= f.name %></a></li>
+    <% end %>
+
+  </div>
+</center>

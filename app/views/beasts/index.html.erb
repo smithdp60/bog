@@ -1,7 +1,9 @@
 <center>
 <h1>Beasts</h1>
 
+<div class="beast-list">
 <% @beasts.each do |b| %>
 <li><%= link_to b.name, b %></li>
 <% end %>
+</div>
 </center>

@@ -1,0 +1,18 @@
+<center>
+<h1>Tags</h1>
+
+<%= render "layouts/flash" %>
+
+<div class="beast-list">
+<% @tags.each do |t| %>
+<li><%= link_to t.name, t %>
+
+  <%= link_to 'Delete', t, class: "btn btn-danger",
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
+
+</li>
+
+<% end %>
+</div>
+</center>
