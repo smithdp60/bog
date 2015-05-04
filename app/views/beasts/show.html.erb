@@ -1,21 +1,25 @@
-<center><h1><%= @beast.name %></h1>
+<center>
+  <div class="show-left">
+    <img src="<%= @url %>">
+  </div>
+  <div class="show-right">
+    <h1><%= @beast.name %></h1>
+    <p>
+      <strong>Description:</strong>
+      <%= @beast.description %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @beast.description %>
-  </p>
+    <p>
+      <strong>Tags:</strong>
+      <% @beast.tags.each do |f| %>
+      <span class="label label-primary"><%= f.name %></span>
+      <% end %>
+    </p>
 
-  <p>
-    <strong>Tags:</strong>
-    <% @beast.tags.each do |f| %>
-    <span class="label label-primary"><%= f.name %></span>
-    <% end %>
-  </p>
-
-  <%= link_to 'Edit', edit_beast_path(@beast) %> |
-  <%= link_to 'Back', beasts_path %> |
-  <%= link_to 'Delete', beast_path,
-  method: :delete,
-  data: { confirm: 'Are you sure?' } %>
-
+    <%= link_to 'Edit', edit_beast_path(@beast) %> |
+    <%= link_to 'Back', beasts_path %> |
+    <%= link_to 'Delete', beast_path,
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  </div>
 </center>

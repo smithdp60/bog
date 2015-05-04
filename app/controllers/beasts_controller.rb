@@ -22,6 +22,13 @@ class BeastsController < ApplicationController
   def show
     @beast = Beast.find(params[:id])
     @tags = @beast.tags
+    list = flickr.photos.search :text => @beast.name, :sort => "relevance"
+    number = rand(0..3)
+    id = list[number].id
+    secret = list[number].secret
+    info = flickr.photos.getInfo :photo_id => id, :secret => secret
+    @url = FlickRaw.url(info)
+
   end
 
   def edit
